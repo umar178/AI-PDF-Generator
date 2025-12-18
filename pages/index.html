@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PDF Designer | Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at top left, #f0f4ff 0%, #ffffff 40%, #f9fafb 100%);
+        }
+        .input-focus {
+            transition: all 0.2s ease;
+        }
+        .input-focus:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4 md:p-8">
+
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-[120px] opacity-60"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-100 rounded-full blur-[120px] opacity-60"></div>
+    </div>
+
+    <div class="max-w-4xl w-full glass-card rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+
+            <div class="lg:col-span-4 bg-gray-900 p-8 lg:p-12 text-white flex flex-col justify-between">
+                <div>
+                    <div class="h-10 w-10 bg-blue-500 rounded-xl mb-8 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h1 class="text-3xl font-bold leading-tight mb-4">AI PDF <br><span class="text-blue-400">Designer</span></h1>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Generate professional, print-ready documents in seconds using next-gen Gemini models.
+                    </p>
+                </div>
+
+                <div class="mt-12 lg:mt-0">
+                    <div class="flex -space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-full border-2 border-gray-900 bg-gray-700 flex items-center justify-center text-[10px] font-bold">AI</div>
+                        <div class="w-8 h-8 rounded-full border-2 border-gray-900 bg-blue-600 flex items-center justify-center text-[10px] font-bold">PDF</div>
+                    </div>
+                    <p class="text-xs text-gray-500 font-medium tracking-wide uppercase">Powered by Google Gemini</p>
+                    <p class="text-xs text-gray-500 font-medium tracking-wide uppercase">Developed By Umer Karim</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 p-8 lg:p-12">
+                <form action="/generate" method="post" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Document Type</label>
+                            <div class="relative">
+                                <select name="pdf_type" class="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-3.5 px-4 pr-8 rounded-xl input-focus outline-none cursor-pointer">
+                                    <option value="Business Report">💼 Business Report</option>
+                                    <option value="Executive Summary">📊 Executive Summary</option>
+                                    <option value="Academic Essay">🎓 Academic Essay</option>
+                                    <option value="Project Proposal">🚀 Project Proposal</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Engine</label>
+                            <div class="relative">
+                                <select name="model_version" class="w-full appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-3.5 px-4 pr-8 rounded-xl input-focus outline-none cursor-pointer">
+                                    <option value="gemini-1.5-flash">Gemini 1.5 Flash (Standard)</option>
+                                    <option value="gemini-2.5-flash" selected>Gemini 2.5 Flash (Fast)</option>
+                                    <option value="gemini-2.5-pro">Gemini 2.5 Pro (Ultra)</option>
+                                    <option value="gemini-3-pro-preview">Gemini 3 Pro (Experimental)</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Content Details</label>
+                        <textarea
+                            name="content"
+                            rows="5"
+                            class="w-full bg-gray-50 border border-gray-200 text-gray-700 p-4 rounded-xl input-focus outline-none resize-none placeholder:text-gray-400"
+                            placeholder="Describe your document requirements or paste your raw notes here..."></textarea>
+                    </div>
+
+                    <div class="group flex items-center justify-between p-4 bg-gray-50 border border-gray-100 rounded-2xl transition-all hover:bg-blue-50 hover:border-blue-100">
+                        <div class="flex items-center space-x-3">
+                            <div class="relative flex items-center">
+                                <input type="checkbox" name="include_images" id="include_images"
+                                    class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition-all">
+                                <svg class="absolute w-3.5 h-3.5 text-white p-0.5 opacity-0 peer-checked:opacity-100 pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <label for="include_images" class="cursor-pointer">
+                                <span class="text-sm font-semibold text-gray-700 block">Rich Media Integration</span>
+                                <span class="text-[11px] text-gray-500 uppercase tracking-tight">AI will source and embed relevant visuals</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="group relative w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-blue-200 active:scale-[0.98] overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center">
+                            Generate & Download PDF
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
