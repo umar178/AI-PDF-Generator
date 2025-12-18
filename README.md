@@ -12,17 +12,17 @@ An intelligent web application that transforms descriptive text into professiona
 ## ✨ Features
 
 * **Intelligent Layout Engine**: Uses Gemini models to generate structured HTML documents styled with Tailwind CSS.
-* [cite_start]**Multiple Document Profiles**: Specialized support for Business Reports, Executive Summaries, Academic Essays, and Project Proposals.
+* **Multiple Document Profiles**: Specialized support for Business Reports, Executive Summaries, Academic Essays, and Project Proposals.
 * **Rich Media Integration**: Includes an option for AI to source and embed relevant visuals using online images.
 * **Pixel-Perfect PDFs**: Uses Playwright (Chromium) to render content into A4 format, ensuring no text is cut off and sections are properly aligned.
-* [cite_start]**Modern Glassmorphic UI**: A sleek, responsive dashboard featuring glassmorphism effects and Tailwind CSS styling.
+* **Modern Glassmorphic UI**: A sleek, responsive dashboard featuring glassmorphism effects and Tailwind CSS styling.
 * **Real-time Logging**: Includes a built-in logging system to track requests, AI responses, and generation times.
 
 ---
 
 ## 🏗️ Architecture
 
-1.  [cite_start]**Frontend**: A Tailwind-based dashboard (FastAPI + Jinja2) collects document requirements.
+1.  **Frontend**: A Tailwind-based dashboard (FastAPI + Jinja2) collects document requirements.
 2.  **Backend**: FastAPI handles form data and coordinates the generation logic.
 3.  **Intelligence**: The Gemini API generates sanitized HTML/CSS strings based on user prompts.
 4.  **Rendering**: Playwright launches a headless browser to convert the HTML output into a professional A4 PDF.
@@ -59,13 +59,13 @@ The server will start at http://127.0.0.1:8000.
 Supported Models
 You can select between different Gemini engines in the UI:
 
-Gemini 1.5 Flash: Optimized for speed (Standard).
+**Gemini 1.5 Flash** (free): Optimized for speed (Standard). Not recommended.
 
-Gemini 2.5 Flash: Fast generation (Default).
+**Gemini 2.5 Flash** (free): Fast generation (Default).
 
-Gemini 2.5 Pro: High-reasoning (Ultra).
+**Gemini 2.5 Pro** (paid): High-reasoning (Ultra).
 
-Gemini 3 Pro: Latest experimental features.
+**Gemini 3 Pro** (paid): Latest experimental features. State of the art PDF files
 
 Document Styling
 The system uses a BASE_PROMPT in generator.py to define global styles. You can modify this prompt to change default fonts (like Arial or Helvetica), margins, or color schemes.
