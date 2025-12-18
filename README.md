@@ -37,7 +37,7 @@ An intelligent web application that transforms descriptive text into professiona
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/umar178/AI-PDF-Generator.git](https://github.com/umar178/AI-PDF-Generator.git)
+git clone https://github.com/umar178/AI-PDF-Generator.git
 cd AI-PDF-Generator
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
